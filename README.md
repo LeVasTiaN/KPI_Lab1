@@ -6,6 +6,11 @@
 ```bash
 go run .
 ```
+
+## Технології  
+- Go (net/http)  
+- JSON
+
 ## Використання
 
 Відправте GET-запит на: http://localhost:8795/time
