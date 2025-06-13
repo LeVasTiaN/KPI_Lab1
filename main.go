@@ -6,7 +6,19 @@ import (
     "time"
 )
 
+func isEvenMinute() bool {
+    currentMinute := time.Now().Minute()
+    isEven := currentMinute%2 == 0
+    
+    if isEven {
+        fmt.Printf("[DEBUG] Current minute (%d) is even. Time endpoint traffic may spike.\n", currentMinute)
+    }
+    
+    return isEven
+}
+
 func timeHandler(w http.ResponseWriter, r *http.Request) {
+    isEvenMinute()
     currentTime := time.Now().Format(time.RFC3339)
     response := map[string]string{"time": currentTime}
     
