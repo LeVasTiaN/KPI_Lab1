@@ -9,7 +9,9 @@ import (
 func timeHandler(w http.ResponseWriter, r *http.Request) {
     currentTime := time.Now().Format(time.RFC3339)
     response := map[string]string{"time": currentTime}
-
+    
+    fmt.Println("Request to /time at", currentTime)
+    
     w.Header().Set("Content-Type", "application/json")
     json.NewEncoder(w).Encode(response)
 }
